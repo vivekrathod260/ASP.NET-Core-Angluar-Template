@@ -1,0 +1,6 @@
+@AspAngularTemplate_HostAddress = http://localhost:5136
+
+GET {{AspAngularTemplate_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
