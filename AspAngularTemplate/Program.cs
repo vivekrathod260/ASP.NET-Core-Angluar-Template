@@ -64,7 +64,7 @@ app.UseSpa(spa =>
     }
     catch
     {
-        Process? process = Process.Start(new ProcessStartInfo("npm.cmd", "run start")
+        Process? process = Process.Start(new ProcessStartInfo("npm.cmd", "start")
         {
             UseShellExecute = true,
             WorkingDirectory = Path.Combine(app.Environment.ContentRootPath, spa.Options.SourcePath)
