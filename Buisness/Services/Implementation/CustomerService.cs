@@ -1,4 +1,5 @@
 ﻿using Buisness.Models;
+using Data;
 using Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,28 @@ namespace Buisness.Services.Implementation
 {
     public class CustomerService : ICustomerService
     {
-        private readonly List<Customer> _customers = new();
+        private readonly AppDbContext dbContext;
+
+        public CustomerService(AppDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
 
         public void AddCustomer(CustomerModel model)
         {
             var customer = new Customer
             {
-                Id = _customers.Count + 1,
                 FullName = model.FullName,
                 Email = model.Email
             };
-            _customers.Add(customer);
+
+            this.dbContext.Customers.Add(customer);
+            this.dbContext.SaveChanges();
         }
 
-        public IEnumerable<Customer> GetAllCustomers() => _customers;
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            return this.dbContext.Customers;
+        }
     }
 }

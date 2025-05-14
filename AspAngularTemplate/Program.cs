@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen();
 
 // Add Database
 var connStr = builder.Configuration.GetConnectionString("AppDb");
-//builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connStr));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connStr));
 
 var app = builder.Build();
 
