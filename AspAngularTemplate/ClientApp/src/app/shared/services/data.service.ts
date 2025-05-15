@@ -5,13 +5,10 @@ import { Inject, Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class DataService {
-    readonly defaultAcceptContentType = "application/pdf,application/vnd.ms-word,image/*"
-
-    // making an instance for Get Request
-    constructor(
-        private httpClient: HttpClient,
-        @Inject("https://localhost:44367") private baseUrl: string)
+    constructor(private httpClient: HttpClient)
     { }
+
+    baseUrl = "https://localhost:44367/";
 
     get<T>(apiUrl: string) {
         return this.httpClient.get<T>(this.buildUrl(apiUrl), { headers: this.getDefaultHeaders() });
@@ -36,7 +33,8 @@ export class DataService {
     private getDefaultHeaders(accept: string = "application/json") : HttpHeaders
     {
           return new HttpHeaders()
-              .append("accept", accept || "application/json")
+              .append("Content-Type", accept || "application/json")
+              .append("accept","application/json")
               .append("Cache-Control", "no-store")
               .append("Pragma", "no-cache")
               .append("Expires", "-1")

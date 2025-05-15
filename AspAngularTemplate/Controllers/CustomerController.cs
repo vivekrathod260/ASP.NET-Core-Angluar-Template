@@ -25,7 +25,7 @@ namespace AspAngularTemplate.Controllers
         }
 
         [HttpPost]
-        public bool AddCustomer([FromBody] CustomerModel customer)
+        public bool AddCustomer(CustomerModel customer)
         {
             this.customerService.AddCustomer(customer);
             return true;
