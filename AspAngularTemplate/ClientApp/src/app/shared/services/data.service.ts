@@ -41,7 +41,7 @@ export class DataService {
               .append("If-Modified-Since", "0");
     }
 
-    private buildUrl(apiUrl: string) {
+    private buildUrl(apiUrl: string) {  
         return `${this.baseUrl}${apiUrl}`;
     }
 }

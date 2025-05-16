@@ -60,12 +60,16 @@ app.UseEndpoints(endpoints => {
     endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
 });
 
-// 
+
+// Use proxy in dev
 app.UseSpa(spa =>
 {
     spa.Options.SourcePath = "ClientApp";
-    // spa.UseAngularCliServer(npmScript: "start");
 
+    if (!app.Environment.IsDevelopment()) return;
+
+    // spa.UseAngularCliServer(npmScript: "start");
+    
     try
     {
         new TcpClient("localhost", 4466).Close();
