@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Buisness.Models;
-using Buisness.Services;
-using Buisness.Services.Implementation;
+using Business.Models;
+using Business.Services;
+using Business.Services.Implementation;
 using Data.Entities;
 using Data;
 
-namespace AspAngularTemplate.Controllers
+namespace Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

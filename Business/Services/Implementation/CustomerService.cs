@@ -1,4 +1,4 @@
-﻿using Buisness.Models;
+﻿using Business.Models;
 using Data;
 using Data.Entities;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Buisness.Services.Implementation
+namespace Business.Services.Implementation
 {
     public class CustomerService : ICustomerService
     {

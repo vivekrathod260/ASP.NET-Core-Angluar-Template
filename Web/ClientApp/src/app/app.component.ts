@@ -26,8 +26,7 @@ export class AppComponent implements OnInit {
         });
     }
 
-    onSubmit()
-    {
+    onSubmit() {
         if (this.customerForm.valid) {
             let newCustomer: Customer = {
                 fullName: this.customerForm.get('fullName')?.value,

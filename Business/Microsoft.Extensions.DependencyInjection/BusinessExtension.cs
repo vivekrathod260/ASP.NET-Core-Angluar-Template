@@ -1,5 +1,5 @@
-﻿using Buisness.Services;
-using Buisness.Services.Implementation;
+﻿using Business.Services;
+using Business.Services.Implementation;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
